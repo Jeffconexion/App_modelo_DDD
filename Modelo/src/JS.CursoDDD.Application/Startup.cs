@@ -1,15 +1,10 @@
+using JS.CursoDDD.Infra.Data.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace JS.CursoDDD.Application
 {
@@ -26,6 +21,10 @@ namespace JS.CursoDDD.Application
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+                       
+
+            services.AddDbContext<SqlServerContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+            services.AddScoped<SqlServerContext, SqlServerContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
