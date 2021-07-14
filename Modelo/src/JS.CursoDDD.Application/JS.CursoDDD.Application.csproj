@@ -6,10 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JS.CursoDDD.Infra.Data\JS.CursoDDD.Infra.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\JS.CursoDDD.Services\JS.CursoDDD.Services.csproj" />
   </ItemGroup>
 
 

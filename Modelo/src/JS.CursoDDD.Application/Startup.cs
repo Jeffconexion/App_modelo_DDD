@@ -1,4 +1,11 @@
+using AutoMapper;
+using JS.CursoDDD.Application.Models;
+using JS.CursoDDD.Domain.Entites;
+using JS.CursoDDD.Domain.Interfaces;
 using JS.CursoDDD.Infra.Data.Context;
+using JS.CursoDDD.Infra.Data.Repository;
+using JS.CursoDDD.Services.Services;
+using Layer.Architecture.Application.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +32,16 @@ namespace JS.CursoDDD.Application
 
             services.AddDbContext<SqlServerContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.AddScoped<SqlServerContext, SqlServerContext>();
+
+            services.AddScoped<IBaseRepository<User>, BaseRepository<User>>();
+            services.AddScoped<IBaseService<User>, BaseService<User>>();
+
+            services.AddSingleton(new MapperConfiguration(config =>
+            {
+                config.CreateMap<CreateUserModel, User>();
+                config.CreateMap<UpdateUserModel, User>();
+                config.CreateMap<User, UserModel>();
+            }).CreateMapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

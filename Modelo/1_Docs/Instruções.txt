@@ -1,0 +1,7 @@
+- Uma arquitetura, em .Net Core, baseada nos princípios do DDD
+
+Esse modelo foi seguindo o exemplo do Alex Alves, disponível no link:
+https://alexalvess.medium.com/criando-uma-api-em-net-core-baseado-na-arquitetura-ddd-2c6a409c686
+
+- Banco de dados Sql Server
+O script se encontra na pasta sql.
