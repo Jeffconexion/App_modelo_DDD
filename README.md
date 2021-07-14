@@ -20,7 +20,7 @@
  por camadas e é independente da tecnologia utilizada."
 </p> 
 
-<p>Baseado no Artigo de Alex, disponível no Link: <a href=“https://alexalvess.medium.com/criando-uma-api-em-net-core-baseado-na-arquitetura-ddd-2c6a409c686“>Artigo DDD</a> </p>
+<p>Baseado no Artigo de Alex, disponível no Link: <a href="https://alexalvess.medium.com/criando-uma-api-em-net-core-baseado-na-arquitetura-ddd-2c6a409c686">Ler artigo.</a> </p>
 
 <p align="center">
   <img src="https://github.com/Jeffconexion/App_ApisDataDriver/blob/main/webApi.gif" />
